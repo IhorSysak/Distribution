@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Distributor.BLL.DTO.TaskDTO>
+
+@{
+    ViewBag.Title = "Tasks";
+}
+
+<h2>Tasks</h2>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">Title:</label>
+        <input name="title" class="form-control" />
+        <label class="control-label">Start Task:</label>
+        <input type="date" name="startTask" class="form-control " />
+        <label class="control-label">Deadline:</label>
+        <input type="date" name="deadline" class="form-control " />
+        @*<label class="control-label">Status:</label>
+        <input name="status" class="form-control" />*@
+        <input type="submit" value="Filter" class="btn btn-default" />
+    </div>
+</form>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Progress)
+        </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Deadline)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Progress)
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TaskID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TaskID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TaskID })
+            </td>
+        </tr>
+    }
+</table>

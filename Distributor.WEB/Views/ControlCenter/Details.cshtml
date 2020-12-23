@@ -1,0 +1,57 @@
+﻿@model Distributor.BLL.DTO.ControlCenterDTO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Control Center</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaskName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProgressTask)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProgressTask)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoadOfWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoadOfWork)
+        </dd>
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Back to List", "ControlCenters")
+</p>

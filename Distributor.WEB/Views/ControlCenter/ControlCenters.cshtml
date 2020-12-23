@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Distributor.BLL.DTO.ControlCenterDTO>
+
+@{
+    ViewBag.Title = "ControlCenters";
+}
+
+<h2>ControlCenter</h2>
+
+<form method="get">
+    <div class="form-inline form-group">
+        <label class="control-label">LastName:</label>
+        <input name="StudentName" class="form-control" />
+        <label class="control-label">TaskName:</label>
+        <input name="TaskName" class="form-control" />
+        <label class="control-label">Status:</label>
+        <input name="Status" class="form-control" />
+        <label class="control-label">Progress:</label>
+        <input name="ProgressTask" class="form-control" />
+        <input type="submit" value="Filter" class="btn btn-default" />
+
+    </div>
+</form>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProgressTask)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProgressTask)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ControlCenterID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ControlCenterID }) |
+                @Html.ActionLink("Done", "Delete", new { id = item.ControlCenterID })
+            </td>
+        </tr>
+    }
+</table>
+
